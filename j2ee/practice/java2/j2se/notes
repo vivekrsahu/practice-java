@@ -1,0 +1,7 @@
+Here, type 1 (jdbc-odbc bridge) driver is used as the driver.
+Before 1.6, this driver was required to be loaded manually. But since 1.6 and till 1.8, 
+JVM (Sun) provided this driver with preloaded internally. Since 1.8, this driver is completely removed.
+
+Oracle provides OracleDriver class for loading the driver internally using oracle provided ojdbc jar.
+
+Connections must be closed or else after a certain limit, new connection to database would not be possible.

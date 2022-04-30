@@ -1,0 +1,16 @@
+By using compressed references or compressed ordinary object pointers, memory usage can be optimized, i.e., for 64-bits system also, the data headers will consume 32 bits each.
+
+The trick behind compressed oops is the difference between byte addressing and word addressing of memory. 
+With byte addressing you have access to every byte in memory but need a unique address for each byte as well. 
+In a 32bit environment this limits you to 2^32 bytes of memory. In word addressing you still have the same amount of addressable memory blocks but this memory chunk is one word instead of one byte. 
+In a 64bit machine a word is 8 bytes. This gives JVM three zero bits. Java takes advantage of these bits by shifting them to expand the addressable memory and implement compressed oops.
+Compressed oops is enabled by default in JVMs newer than 6u23.
+
+
+To disable compressed oops:
+java -XX:-UseCompressedOops ClassName
+
+To enable it:
+java -XX:+UseCompressedOops ClassName
+
+or simply add in VM args

@@ -1,0 +1,64 @@
+Integer object = new Integer(10);
+int value is 32 bits but JVM allocates 128 bits of memory for an integer.
+
+For 32-bits system
+Typical object metadata: for Integer
+Class pointer (32 bits): pointer to class information i.e., Integer
+Flags (32 bits): for storing shape, hashcode etc
+Lock (32 bits): flatlock or pointer to inflated memory (significant for providing locks during synchronization)
+Default Object size: here for Integer, it is 32 bits
+
+String object = new String(“MyString");
+For String object in 32-bits system:
+Data headers (96 bits): Class pointer + Flags + Lock
+hash (32 bits)
+count (32 bits)
+offset (32 bits): length of String
+value (char[]): 128 bits of char data
+Total = 480 bits
+
+Typical object metadata: for Integer array
+Class pointer (32 bits): pointer to class information
+Flags (32 bits): for storing hashcodes
+Lock (32 bits): flatlock or pointer to inflated memory (significant for providing locks during synchronization)
+Size (32 bits): the length of the array
+Default Object size
+
+For 64-bits system all the data header sizes get double i.e., Class pointer = 64 bits, Flags = 64 bits, Lock = 64 bits & Size (for array) = 64 bits
+
+For HashMap:
+default capacity = 16 entries
+Empty size = 128 bytes i.e., 48 bytes for HashMap object + (16+(entries*4 bytes)) for array
+Each HashMap$Entry:
+int keyHash, Object next, Object key, Object value
+32 bytes per key-value entry
+for 10,000 entry of HashMap, overhead is ~360K
+Expansion: 2 times
+
+For HashSet:
+default capacity = 16 entries
+Empty size = 144 bytes i.e., 64 bytes for HashSet object + (16+(entries*4 bytes)) for array
+Expansion: 2 times
+
+For HashTable:
+default capacity = 11 entries
+Empty size = 104 bytes
+Expansion: 2 times + 1
+
+For LinkedList:
+default capacity = 1 entry
+Empty size = 48 bytes i.e., 24 bytes for LinkedList object + 24 bytes per entry (initially 1)
+Each LinkedList$Entry:
+Object previous, Object next, Object entry
+24 bytes per entry
+for 10,000 entry of LinkedList, overhead is ~240K
+Expansion: +1
+
+For ArrayList:
+default capacity = 10 entries
+Empty size = 88 bytes i.e., 32 bytes for ArrayList object + (16+(entries*4 bytes)) for array
+for 10,000 entry of ArrayList, overhead is ~40K (no overhead on adding each entry unlike the two above)
+Expansion: 1.5 times
+
+StringBuffer is similar to ArrayList if memory is considered.
+Expansion: 2 times
