@@ -1,6 +1,8 @@
 
 package practice.corejava.collection.map;
 
+import java.util.Objects;
+
 /**
  * This is the parent class of all map demo classes
  * 
@@ -8,7 +10,7 @@ package practice.corejava.collection.map;
  */
 public class MapDemo {
 
-	private Integer number;
+	private final Integer number;
 
 	public Integer getNumber() {
 		return number;
@@ -35,10 +37,8 @@ public class MapDemo {
 		if (getClass() != obj.getClass())
 			return false;
 		MapDemo other = (MapDemo) obj;
-		if (number != other.number)
-			return false;
-		return true;
-	}
+        return Objects.equals(number, other.number);
+    }
 
 	@Override
 	public String toString() {

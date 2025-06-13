@@ -8,7 +8,7 @@ package practice.corejava.collection.set;
  */
 public class SetDemo {
 
-	private Integer number;
+	private final Integer number;
 
 	public Integer getNumber() {
 		return number;
@@ -35,10 +35,8 @@ public class SetDemo {
 		if (getClass() != obj.getClass())
 			return false;
 		SetDemo other = (SetDemo) obj;
-		if (number != other.number)
-			return false;
-		return true;
-	}
+        return number.equals(other.number);
+    }
 
 	@Override
 	public String toString() {

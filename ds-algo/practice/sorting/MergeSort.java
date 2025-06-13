@@ -13,14 +13,13 @@ public class MergeSort {
         printArray(inputArray);
     }
 
-    private static void printArray(int arr[]) {
+    private static void printArray(int[] arr) {
         int n = arr.length;
-        for (int i = 0; i < n; ++i)
-            System.out.print(arr[i] + " ");
+        for (int j : arr) System.out.print(j + " ");
         System.out.println();
     }
 
-    private static void sort(int arr[], int l, int r) {
+    private static void sort(int[] arr, int l, int r) {
         if (l < r) {
             // Find the middle point
             int m = (l + r) / 2;
@@ -34,17 +33,16 @@ public class MergeSort {
         }
     }
 
-    private static void merge(int arr[], int l, int m, int r) {
+    private static void merge(int[] arr, int l, int m, int r) {
         int n1 = m - l + 1;
         int n2 = r - m;
 
         /* Create temp arrays */
-        int L[] = new int[n1];
-        int R[] = new int[n2];
+        int[] L = new int[n1];
+        int[] R = new int[n2];
 
         /* Copy data to temp arrays */
-        for (int i = 0; i < n1; ++i)
-            L[i] = arr[l + i];
+        System.arraycopy(arr, l, L, 0, n1);
         for (int j = 0; j < n2; ++j)
             R[j] = arr[m + 1 + j];
 

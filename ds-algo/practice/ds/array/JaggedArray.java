@@ -3,7 +3,7 @@ package practice.ds.array;
 public class JaggedArray {
 
     private static void printElements(int rows) {
-        int arr[][] = new int[rows][];
+        int[][] arr = new int[rows][];
         // create array
         for (int i = 0; i < arr.length; i++) {
             arr[i] = new int[i + 1];
@@ -16,9 +16,9 @@ public class JaggedArray {
             }
         }
         // fetch elements and print
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                System.out.print(arr[i][j] + " ");
+        for (int[] ints : arr) {
+            for (int j = 0; j < ints.length; j++) {
+                System.out.print(ints[j] + " ");
             }
             System.out.println();
         }

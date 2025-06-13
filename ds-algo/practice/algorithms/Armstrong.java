@@ -6,11 +6,11 @@ public final class Armstrong {
 
     private static boolean isArmstrong(int input) {
         int sum = 0;
-        int digit = 0;
+        int digit;
         int temp = input;
         while(temp > 0) {
             digit = temp % 10;
-            sum += Math.pow(digit, 3);
+            sum += (int) Math.pow(digit, 3);
             temp = temp / 10;
         }
         if (sum == input) {
@@ -21,7 +21,6 @@ public final class Armstrong {
     }
 
     public static void main(String[] args) {
-        @SuppressWarnings("resource")
         Scanner in = new Scanner(System.in);
         int input = in.nextInt();
         if (isArmstrong(input)) {

@@ -32,8 +32,8 @@ public final class MapVSSet {
  * @author Vivek Ranjan Sahu
  */
 final class KeyClass {
-	private String key;
-	private String value;
+	private final String key;
+	private final String value;
 	public KeyClass(String key, String value) {
 		this.key = key;
 		this.value = value;

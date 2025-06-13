@@ -11,7 +11,7 @@ public class PrintUniqueWords {
     }
 
     private static void printUniqueWords(String input1, String input2) {
-        List<String> mergedList = new ArrayList<>(Arrays.asList(input1.split(" ")));
+        List<String> mergedList = Arrays.asList(input1.split(" "));
         mergedList.addAll(Arrays.asList(input2.split(" ")));
 
         Map<String, Integer> countMap = new HashMap<>();

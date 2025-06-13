@@ -28,17 +28,16 @@ public final class HashCodeEquals {
 	 * {@code employeeSet} which is against the nature of {@link Set}.
 	 */
 	private static void contractViolation() {
-		Employee employee[] = new Employee[5];
+		Employee[] employee = new Employee[5];
 		employee[0] = new Employee("Gyan", 6);
 		employee[1] = new Employee("Gyan", 5);
 		employee[2] = new Employee("Prabhakar", 6);
 		employee[3] = new Employee("Rochit", 5);
 		employee[4] = new Employee("Guru", 4);
-	
-		Set<Employee> employeeSet = new HashSet<>();
-		employeeSet.addAll(Arrays.asList(employee));
+
+        Set<Employee> employeeSet = new HashSet<>(Arrays.asList(employee));
 		// set debugger to see the table structure
-		System.out.println("Employee details: " + employeeSet.toString());
+		System.out.println("Employee details: " + employeeSet);
 	}
 
 	/**
@@ -48,16 +47,15 @@ public final class HashCodeEquals {
 	 * Therefore, the reverse of the contract is not necessary but recommended.
 	 */
 	private static void reverseContractViolation() {
-		EmployeeReverse employeeReverse[] = new EmployeeReverse[4];
+		EmployeeReverse[] employeeReverse = new EmployeeReverse[4];
 		employeeReverse[0] = new EmployeeReverse("Gyan", 6);
 		employeeReverse[1] = new EmployeeReverse("Prabhakar", 6);
 		employeeReverse[2] = new EmployeeReverse("Rochit", 5);
 		employeeReverse[3] = new EmployeeReverse("Guru", 4);
 
-		Set<EmployeeReverse> set = new HashSet<>();
-		set.addAll(Arrays.asList(employeeReverse));
+        Set<EmployeeReverse> set = new HashSet<>(Arrays.asList(employeeReverse));
 		// set debugger to see the table structure
-		System.out.println("Employee details: " + set.toString());
+		System.out.println("Employee details: " + set);
 	}
 
 }

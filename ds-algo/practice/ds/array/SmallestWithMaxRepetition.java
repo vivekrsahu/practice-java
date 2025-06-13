@@ -1,10 +1,10 @@
 package practice.ds.array;
 
-public class SmallestWithMaxRepition {
+public class SmallestWithMaxRepetition {
 
-    private static int getSmallestWithMaxRepitition(int inputArray[]) {
-        int repition = 0;
-        int tempRepition = 0;
+    private static int getSmallestWithMaxRepetition(int[] inputArray) {
+        int repetition = 0;
+        int tempRepetition = 0;
         int item = 0;
         for (int i = 0; i < inputArray.length; i++) {
             // initialize with first item
@@ -17,22 +17,22 @@ public class SmallestWithMaxRepition {
             }
             for (int j = i + 1; j < inputArray.length; j++) {
                 if (inputArray[i] == inputArray[j]) {
-                    tempRepition++;
+                    tempRepetition++;
                     // replace the jth item with -1 so as to avoid further iteration for same number
                     inputArray[j] = -1;
                 }
             }
-            if (tempRepition > repition || (tempRepition == repition && inputArray[i] < item)) {
-                repition = tempRepition;
+            if (tempRepetition > repetition || (tempRepetition == repetition && inputArray[i] < item)) {
+                repetition = tempRepetition;
                 item = inputArray[i];
             }
-            tempRepition = 0;
+            tempRepetition = 0;
         }
         return item;
     }
 
     public static void main(String[] args) {
-        int inputArray[] = {1, 6, 3, 6, 2, 1, 3, 1, 3, 2, 5, 1, 3, 3, 3, 3};
-        System.out.println(getSmallestWithMaxRepitition(inputArray));
+        int[] inputArray = {1, 6, 3, 6, 2, 1, 3, 1, 3, 2, 5, 1, 3, 3, 3, 3};
+        System.out.println(getSmallestWithMaxRepetition(inputArray));
     }
 }

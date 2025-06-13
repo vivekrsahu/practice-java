@@ -5,8 +5,8 @@ package practice.corejava.contract;
  * @author Vivek Ranjan Sahu
  */
 public final class Employee {
-	private String empName;
-	private int jobLevel;
+	private final String empName;
+	private final int jobLevel;
 
 	public Employee(String empName, int jobLevel) {
 		this.empName = empName;
@@ -29,11 +29,7 @@ public final class Employee {
 	@Override
 	public boolean equals(Object obj) {
 		Employee other = (Employee) obj;
-		if (empName.equals(other.empName)) {
-			return true;
-		} else {
-			return false;
-		}
+        return empName.equals(other.empName);
 	}
 
 	@Override

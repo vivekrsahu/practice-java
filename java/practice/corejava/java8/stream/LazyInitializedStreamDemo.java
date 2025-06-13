@@ -21,6 +21,6 @@ public class LazyInitializedStreamDemo {
 	}
 	private static boolean isEven(int number) {
 		System.out.println("Printing the number that underwent the filter operation: " + number);
-		return number % 2 == 0 ? true : false;
+		return number % 2 == 0;
 	}
 }

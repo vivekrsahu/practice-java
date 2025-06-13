@@ -34,12 +34,9 @@ public class ListDemo {
 			return false;
 		ListDemo other = (ListDemo) obj;
 		if (number == null) {
-			if (other.number != null)
-				return false;
-		} else if (!number.equals(other.number))
-			return false;
-		return true;
-	}
+            return other.number == null;
+		} else return number.equals(other.number);
+    }
 
 	@Override
 	public String toString() {

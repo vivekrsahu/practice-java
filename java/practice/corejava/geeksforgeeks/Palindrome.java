@@ -9,11 +9,11 @@ public class Palindrome {
 			reverse = reverse * 10 + temp % 10;
 			temp = temp / 10;
 		}
-		return input == reverse ? true : false;
+		return input == reverse;
 	}
 
 	private static boolean isPalindromeRecursive(int input) {
-		return recursive(input, 0) == input ? true : false;
+		return recursive(input, 0) == input;
 	}
 
 	private static int recursive(int input, int rev) {

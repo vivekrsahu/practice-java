@@ -48,7 +48,7 @@ public class _0LoadJDBCDriver {
 	static void getDrivers() {
 		Enumeration<Driver> enumeration = DriverManager.getDrivers();
 		while(enumeration.hasMoreElements()) {
-			Driver d = (Driver) enumeration.nextElement();
+			Driver d = enumeration.nextElement();
 			System.out.println(d.getClass().getName());
 		}
 	}

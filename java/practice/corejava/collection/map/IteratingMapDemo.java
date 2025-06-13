@@ -29,21 +29,17 @@ public class IteratingMapDemo {
 		// using iterator to iterate entrySet of the map
 		System.out.println("\nUsing iterator on entrySet\n==========================");
 		start = System.nanoTime();
-		Iterator<Map.Entry<Integer, String>> iterator = map.entrySet().iterator();
-		while (iterator.hasNext()) {
-			Map.Entry<Integer, String> entry = iterator.next();
-			System.out.print(entry.getKey() + " = " + entry.getValue());
-		}
+        for (Map.Entry<Integer, String> entry : map.entrySet()) {
+            System.out.print(entry.getKey() + " = " + entry.getValue());
+        }
 		long time3 = System.nanoTime() - start;
 
 		// using iterator to iterate keySet of the map
 		System.out.println("\nUsing iterator on keySet\n==========================");
 		start = System.nanoTime();
-		Iterator<Integer> keyIterator = map.keySet().iterator();
-		while (keyIterator.hasNext()) {
-			Integer entry = keyIterator.next();
-			System.out.print(entry + " = " + map.get(entry));
-		}
+        for (Integer entry : map.keySet()) {
+            System.out.print(entry + " = " + map.get(entry));
+        }
 		long time4 = System.nanoTime() - start;
 
 		// using lambda expression

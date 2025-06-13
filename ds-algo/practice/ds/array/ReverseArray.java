@@ -45,8 +45,8 @@ public class ReverseArray {
         inputArray = reverse1(inputArray);
         reverse2(inputArray);
         reverse2UsingRecursion(inputArray);
-        for (int i = 0; i < inputArray.length; i++) {
-            System.out.print(inputArray[i] + " ");
+        for (int j : inputArray) {
+            System.out.print(j + " ");
         }
     }
 

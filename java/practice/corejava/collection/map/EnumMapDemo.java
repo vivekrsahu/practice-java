@@ -16,7 +16,7 @@ enum Employee {
 	Employee(String empName) {
 		this.empName = empName;
 	}
-};
+}
 
 /**
  * {@link EnumMap}

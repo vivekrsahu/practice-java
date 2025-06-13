@@ -6,10 +6,10 @@ public final class Person {
 	public enum Sex {
 		MALE, FEMALE;
 	}
-	private String name;
-	private LocalDate birthday;
-	private Sex gender;
-	private String emailAddress;
+	private final String name;
+	private final LocalDate birthday;
+	private final Sex gender;
+	private final String emailAddress;
 	public Person(String name, LocalDate birthday, Sex gender, String emailId) {
 		super();
 		this.name = name;

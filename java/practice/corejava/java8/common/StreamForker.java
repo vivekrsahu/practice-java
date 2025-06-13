@@ -43,8 +43,8 @@ public class StreamForker<T> {
         return consumer;
     }
 
-    public static interface Results {
-        public <R> R get(Object key);
+    public interface Results {
+        <R> R get(Object key);
     }
 
     static class ForkingStreamConsumer<T> implements Consumer<T>, Results {

@@ -2,13 +2,13 @@ package practice.ds.array;
 
 public class RotateArray {
 
-    private static void rotateArray1(int inputArray[], int rotateBy) {
+    private static void rotateArray1(int[] inputArray, int rotateBy) {
         for (int i = 0; i < rotateBy; i++) {
             rotator(inputArray, inputArray.length);
         }
     }
 
-    private static void rotator(int inputArray[], int length) {
+    private static void rotator(int[] inputArray, int length) {
         int temp = inputArray[0];
         for (int i = 0; i < length - 1; i++) {
             inputArray[i] = inputArray[i + 1];
@@ -16,15 +16,15 @@ public class RotateArray {
         inputArray[length - 1] = temp;
     }
 
-    private static void approach1(int inputArray[], int rotateBy) {
+    private static void approach1(int[] inputArray, int rotateBy) {
         rotateArray1(inputArray, rotateBy); // output = {40, 50, 60, 70, 80, 10, 20, 30}
-        for (int i = 0; i < inputArray.length; i++) {
-            System.out.print(inputArray[i] + " ");
+        for (int j : inputArray) {
+            System.out.print(j + " ");
         }
         printDuration1(inputArray, rotateBy);
     }
 
-    private static void printDuration1(int inputArray[], int rotateBy) {
+    private static void printDuration1(int[] inputArray, int rotateBy) {
         long start = System.currentTimeMillis();
         for (int i = 0; i < 1000000; i++) {
             rotateArray1(inputArray, rotateBy);
@@ -34,7 +34,7 @@ public class RotateArray {
     }
 
     public static void main(String[] args) {
-        int inputArray[] = {10, 20, 30, 40, 50, 60, 70, 80};
+        int[] inputArray = {10, 20, 30, 40, 50, 60, 70, 80};
         int rotateBy = 3;
         approach1(inputArray, rotateBy);
         //approach2(inputArray, rotateBy); // more complex and time taking

@@ -5,8 +5,8 @@ package practice.corejava.contract;
  * @author Vivek Ranjan Sahu
  */
 public final class EmployeeReverse {
-	private String empName;
-	private int jobLevel;
+	private final String empName;
+	private final int jobLevel;
 
 	public EmployeeReverse(String empName, int jobLevel) {
 		this.empName = empName;
@@ -29,11 +29,7 @@ public final class EmployeeReverse {
 	@Override
 	public boolean equals(Object obj) {
 		EmployeeReverse other = (EmployeeReverse) obj;
-		if (jobLevel == other.jobLevel && empName.equals(other.empName)) {
-			return true;
-		} else {
-			return false;
-		}
+        return jobLevel == other.jobLevel && empName.equals(other.empName);
 	}
 
 	@Override

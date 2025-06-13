@@ -22,7 +22,7 @@ public final class SortByValueDemo {
 	 * Used before Java 8
 	 */
 	private static void approach1(Map<Integer, String> map) {
-		System.out.println(String.format(STATEMENT, 1));
+		System.out.printf((STATEMENT) + "%n", 1);
 		Set<Entry<Integer, String>> set = map.entrySet();
 		List<Entry<Integer, String>> list = new ArrayList<>(set);
 		Collections.sort(list, new Comparator<Map.Entry<Integer, String>>() {
@@ -41,7 +41,7 @@ public final class SortByValueDemo {
 	 * @since 1.8
 	 */
 	private static void approach2(Map<Integer, String> map) {
-		System.out.println(String.format(STATEMENT, 2));
+		System.out.printf((STATEMENT) + "%n", 2);
 		Set<Entry<Integer, String>> set = map.entrySet();
 		List<Entry<Integer, String>> list = new ArrayList<>(set);
 		Collections.sort(list, (o1, o2) -> o1.getValue().compareTo(o2.getValue()));
@@ -55,7 +55,7 @@ public final class SortByValueDemo {
 	 * @since 1.8
 	 */
 	private static void approach3(Map<Integer, String> map) {
-		System.out.println(String.format(STATEMENT, 3));
+		System.out.printf((STATEMENT) + "%n", 3);
 		map.values().stream().sorted().forEach(System.out::println);
 	}
 	public static void main(String[] args) {
