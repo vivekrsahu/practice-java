@@ -4,7 +4,7 @@
 3. Go to the project folder in cmd and open git bash.
 4. Execute below commands:
        a. git init
-       b. git commt -m "commit comment"
+       b. git commit -m "commit comment"
        c. git branch -M main
        d. git remote add origin git@github.com:vivekrsahu/practice-springboot.git
        e. git push -u origin main
