@@ -15,7 +15,7 @@ public class TechGig1 {
         char previousChar;
         char currentChar;
         int index = 0;
-        StringBuffer buffer = new StringBuffer();
+        StringBuilder buffer = new StringBuilder();
         int j;
         for (int i = 0; i < input1.length(); i++) {
             previousChar = input1.charAt(i);
@@ -41,7 +41,6 @@ public class TechGig1 {
                 break;
             }
         }
-        buffer = null;
         if (minimumLength == 0) {
             return -1;
         }
@@ -49,29 +48,18 @@ public class TechGig1 {
     }
 
     private static boolean isConsonant(char ch) {
-        switch (ch) {
-        case 'a':
-            return false;
-        case 'e':
-            return false;
-        case 'i':
-            return false;
-        case 'o':
-            return false;
-        case 'u':
-            return false;
-        default:
-            return true;
-        }
+        return switch (ch) {
+            case 'a', 'e', 'i', 'o', 'u' -> false;
+            default -> true;
+        };
     }
 
     public static void main(String[] args) throws IOException {
-        @SuppressWarnings("resource")
         Scanner in = new Scanner(System.in);
-        int output = 0;
+        int output;
         String ip1 = in.nextLine().trim();
         int ip2 = Integer.parseInt(in.nextLine().trim());
         output = Consonant(ip1, ip2);
-        System.out.println(String.valueOf(output));
+        System.out.println(output);
     }
 }

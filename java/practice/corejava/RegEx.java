@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
  * @author Vivek Ranjan Sahu
  */
 public final class RegEx {
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 		// String to be scanned to find the pattern.
 		String line = "This order was placed for QT3000! OK?";
 		String pattern = "(.*)(\\d+)(\\d+)(.*)";

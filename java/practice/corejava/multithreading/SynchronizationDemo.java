@@ -63,7 +63,7 @@ class Synchronization {
 }
 
 class CustomThread1 extends Thread {
-	private String threadName;
+	private final String threadName;
 	public CustomThread1(String threadName) {
 		this.threadName = threadName;
 	}
@@ -77,7 +77,7 @@ class CustomThread1 extends Thread {
 }
 
 class CustomThread2 extends Thread {
-	private String threadName;
+	private final String threadName;
 	public CustomThread2(String threadName) {
 		this.threadName = threadName;
 	}
@@ -91,7 +91,7 @@ class CustomThread2 extends Thread {
 }
 
 class CustomThread3 extends Thread {
-	private String threadName;
+	private final String threadName;
 	public CustomThread3(String threadName) {
 		this.threadName = threadName;
 	}
@@ -105,8 +105,8 @@ class CustomThread3 extends Thread {
 }
 
 class CustomThread4 extends Thread {
-	private Synchronization synchronizationReference;
-	private String threadName;
+	private final Synchronization synchronizationReference;
+	private final String threadName;
 	public CustomThread4(Synchronization synchronizationReference, String threadName) {
 		this.synchronizationReference = synchronizationReference;
 		this.threadName = threadName;
@@ -124,8 +124,8 @@ class CustomThread4 extends Thread {
 }
 
 class CustomThread5 extends Thread {
-	private Synchronization synchronizationReference;
-	private String threadName;
+	private final Synchronization synchronizationReference;
+	private final String threadName;
 	public CustomThread5(Synchronization synchronizationReference, String threadName) {
 		this.synchronizationReference = synchronizationReference;
 		this.threadName = threadName;

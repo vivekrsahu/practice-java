@@ -4,9 +4,9 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-public class WaitAndNotifyDemo extends Object {
+public class WaitAndNotifyDemo {
 
-    private List<String> synchedList;
+    private final List<String> synchedList;
 
     public WaitAndNotifyDemo() {
        // create a new synchronized list to be used
@@ -23,8 +23,7 @@ public class WaitAndNotifyDemo extends Object {
              synchedList.wait();
              System.out.println("Waiting..." + Thread.currentThread().getName());
           }
-          String element = (String) synchedList.remove(0);
-          return element;
+           return synchedList.removeFirst();
        }
     }
 
@@ -46,18 +45,15 @@ public class WaitAndNotifyDemo extends Object {
     public static void main(String[] args) {
        final WaitAndNotifyDemo demo = new WaitAndNotifyDemo();
 
-       Runnable runA = new Runnable() {
-
-          public void run() {
-             try {
-                String item = demo.removeElement();
-                System.out.println("" + item);
-                System.out.println("Task done for: " + Thread.currentThread().getName());
-             } catch (InterruptedException ix) {
-                System.out.println("Interrupted Exception!" + Thread.currentThread().getName());
-             } catch (Exception x) {
-                System.out.println("Exception thrown.");
-             }
+       Runnable runA = () -> {
+          try {
+             String item = demo.removeElement();
+             System.out.println(item);
+             System.out.println("Task done for: " + Thread.currentThread().getName());
+          } catch (InterruptedException ix) {
+             System.out.println("Interrupted Exception!" + Thread.currentThread().getName());
+          } catch (Exception x) {
+             System.out.println("Exception thrown.");
           }
        };
 

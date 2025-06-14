@@ -5,7 +5,7 @@ package practice.corejava;
  * @author Vivek Ranjan Sahu
  */
 public final class SampleSingleton {
-	private static SampleSingleton instance = new SampleSingleton();
+	private static final SampleSingleton instance = new SampleSingleton();
 	private SampleSingleton() {}
 	public static SampleSingleton getInstance() {
 		return instance;

@@ -48,9 +48,9 @@ public class BalanceLog {
     }
 
     static class Line implements Log {
-        private double m;
-        private double c;
-        private double l;
+        private final double m;
+        private final double c;
+        private final double l;
 
         public Line(double l, double m, double c) {
             this.m = m;
@@ -93,8 +93,8 @@ public class BalanceLog {
     }
 
     static class Power implements Log {
-        private double l;
-        private double power;
+        private final double l;
+        private final double power;
 
         public Power(double l, double power) {
             this.l = l;
@@ -119,7 +119,7 @@ public class BalanceLog {
     }
 
     static class Sine implements Log {
-        private double l;
+        private final double l;
 
         public Sine(double l) {
             this.l = l;

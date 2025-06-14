@@ -9,7 +9,7 @@ import java.lang.reflect.Constructor;
  * @author Vivek Ranjan Sahu
  */
 final class Test {
-	private String string;
+	private final String string;
 	public Test() {
 		string = "Initialized";
 	}
